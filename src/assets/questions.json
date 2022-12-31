@@ -1,0 +1,20 @@
+[
+  {
+    "title":"test1",
+    "clues":[
+      {
+        "price":100,
+        "prompt": "number of dogs at the house",
+        "response": "1"
+      },
+      {
+        "price":200,
+        "prompt": "number of dogs at the house",
+        "response": "1"
+      }
+    ]
+  },
+  {
+    "title":"test2"
+  }
+]
