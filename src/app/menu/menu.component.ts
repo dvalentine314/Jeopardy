@@ -18,11 +18,6 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.state.getQuestions().subscribe(questions=>{
-      ///console.log(questions);
-
-    });
-
     this.menuItems$ = this.state.getQuestions().pipe(
         filter(z=>z!=null),
         map(questions=>{

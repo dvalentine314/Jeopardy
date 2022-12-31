@@ -1,20 +1,140 @@
 [
   {
     "title":"test1",
-    "clues":[
-      {
-        "price":100,
-        "prompt": "number of dogs at the house",
-        "response": "1"
-      },
-      {
-        "price":200,
-        "prompt": "number of dogs at the house",
-        "response": "1"
-      }
-    ]
+    "100":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "200":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "300":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "400":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "500":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    }
   },
   {
-    "title":"test2"
+    "title":"test2",
+    "100":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "200":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "300":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "400":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "500":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    }
+  },
+  {
+    "title":"test3",
+    "100":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "200":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "300":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "400":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "500":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    }
+  },
+  {
+    "title":"test4",
+    "100":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "200":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "300":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "400":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "500":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    }
+  },
+  {
+    "title":"test5",
+    "100":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "200":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "300":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "400":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "500":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    }
+  },
+  {
+    "title":"test6",
+    "100":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "200":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "300":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "400":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    },
+    "500":{
+      "prompt": "number of dogs at the house",
+      "response": "1"
+    }
   }
 ]
