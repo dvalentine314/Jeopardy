@@ -1,3 +1,4 @@
-<div id="prompt-area" routerLink="menu">
-  <p>prompt works!</p>
+<div id="prompt-area" *ngIf="(promptText$|async) as promptText">
+  <p>{{promptText.promptText}}</p>
 </div>
+<a routerLink="menu">go back</a>

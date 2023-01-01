@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, from } from 'rxjs';
+import { BehaviorSubject, filter, from } from 'rxjs';
 import { Category } from './stateTypes';
 
 @Injectable({
@@ -15,5 +15,5 @@ export class StateService {
       .then(json=>this.questions.next(json));
   }
 
-  getQuestions = () => this.questions.asObservable();
+  getQuestions = () => this.questions.pipe(filter(z=>z!=null));
 }
