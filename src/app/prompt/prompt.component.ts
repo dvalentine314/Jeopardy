@@ -13,6 +13,8 @@ export class PromptComponent implements OnInit {
   promptText$: Observable<{promptText:string, responseText:string}>=
     new Observable<{promptText:string, responseText:string}>();
 
+  showResponse: boolean= false;
+
   constructor(
     private activatedRoute:ActivatedRoute,
     private state: StateService
