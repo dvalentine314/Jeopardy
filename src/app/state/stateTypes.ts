@@ -1,8 +1,11 @@
 export type Category = {
-  [amount in '100' | '200' | '300' | '400' | '500']: Prompt;
-} & {
   title: string;
   completed: boolean;
+  100: Prompt;
+  200: Prompt;
+  300: Prompt;
+  400: Prompt;
+  500: Prompt;
 };
 
 export interface Prompt{

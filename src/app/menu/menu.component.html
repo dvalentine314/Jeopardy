@@ -1,20 +1,22 @@
-<table class="menu-grid" *ngIf="(menuItems$|async) as categories">
-  <tr>
-    <th *ngFor="let category of categories">{{category.title}}</th>
-  </tr>
-  <tr>
-    <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/100'">100</a></td>
-  </tr>
-  <tr>
-    <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/200'">200</a></td>
-  </tr>
-  <tr>
-    <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/300'">300</a></td>
-  </tr>
-  <tr>
-    <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/400'">400</a></td>
-  </tr>
-  <tr>
-    <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/500'">500</a></td>
-  </tr>
-</table>
+<div class="contestant-styles">
+  <table class="menu-grid" *ngIf="(menuItems$|async) as categories">
+    <tr>
+      <th *ngFor="let category of categories">{{category.title}}</th>
+    </tr>
+    <tr>
+      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/100'">100</a></td>
+    </tr>
+    <tr>
+      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/200'">200</a></td>
+    </tr>
+    <tr>
+      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/300'">300</a></td>
+    </tr>
+    <tr>
+      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/400'">400</a></td>
+    </tr>
+    <tr>
+      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/500'">500</a></td>
+    </tr>
+  </table>
+</div>
