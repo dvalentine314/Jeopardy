@@ -1,6 +1,5 @@
 export type Category = {
   title: string;
-  completed: boolean;
   100: Prompt;
   200: Prompt;
   300: Prompt;
@@ -8,7 +7,8 @@ export type Category = {
   500: Prompt;
 };
 
-export interface Prompt{
-  prompt:string;
-  response: string;
+export class Prompt{
+  prompt?:string;
+  response?: string;
+  read: boolean=false;
 }

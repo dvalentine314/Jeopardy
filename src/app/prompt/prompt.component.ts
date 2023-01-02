@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { combineLatest, map, Observable } from 'rxjs';
+import { isAmount } from 'src/type-guards';
 import { StateService } from '../state/state.service';
+import { Prompt } from '../state/stateTypes';
 
 @Component({
   selector: 'app-prompt',
@@ -10,8 +12,8 @@ import { StateService } from '../state/state.service';
 })
 export class PromptComponent implements OnInit {
 
-  promptText$: Observable<{promptText:string, responseText:string}>=
-    new Observable<{promptText:string, responseText:string}>();
+  promptText$: Observable<Prompt>=
+    new Observable<Prompt>();
 
   showResponse: boolean= false;
 
@@ -24,22 +26,20 @@ export class PromptComponent implements OnInit {
       .pipe(map(([paramMap, questions])=>{
         const category = paramMap.get('category');
         const amount  =  paramMap.get('amount');
-        if(category!==null && amount!==null&&this.isAmount(amount)){
+        if(category!==null && amount!==null&& isAmount(amount)){
           let categoryObject = questions[parseInt(category,10)];
           let promptObject = categoryObject[amount];
-          return {promptText: promptObject.prompt,
-            responseText: promptObject.response};
+          return {
+            prompt: promptObject.prompt,
+            response: promptObject.response,
+            read: false
+          };
         }else{
-          return {promptText:'',responseText:''};
+          return {prompt:'',response:'',read:true};
         }
       }));
   }
 
-  private isAmount(element:String): element is '100'|'200'|'300'|'400'|'500'{
-    switch (element){
-      case'100': case '200':case '300': case'400':case'500': return true;
-      default: return false;
-    }
-  }
+
 
 }

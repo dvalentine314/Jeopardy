@@ -4,19 +4,19 @@
       <th *ngFor="let category of categories">{{category.title}}</th>
     </tr>
     <tr>
-      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/100'">100</a></td>
+      <td *ngFor="let category of categories; index as i"><a (click)="selectItem(i,100)" [ngClass]="{'selected':category.one?.read}">100</a></td>
     </tr>
     <tr>
-      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/200'">200</a></td>
+      <td *ngFor="let category of categories; index as i"><a (click)="selectItem(i,200)" [ngClass]="{'selected':category.two?.read}">200</a></td>
     </tr>
     <tr>
-      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/300'">300</a></td>
+      <td *ngFor="let category of categories; index as i"><a (click)="selectItem(i,300)" [ngClass]="{'selected':category.three?.read}">300</a></td>
     </tr>
     <tr>
-      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/400'">400</a></td>
+      <td *ngFor="let category of categories; index as i"><a (click)="selectItem(i,400)" [ngClass]="{'selected':category.four?.read}">400</a></td>
     </tr>
     <tr>
-      <td *ngFor="let category of categories; index as i"><a [routerLink]="'/prompt/'+i+'/500'">500</a></td>
+      <td *ngFor="let category of categories; index as i"><a (click)="selectItem(i,500)" [ngClass]="{'selected':category.five?.read}">500</a></td>
     </tr>
   </table>
 </div>
