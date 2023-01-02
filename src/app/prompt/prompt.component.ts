@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { combineLatest, map, Observable } from 'rxjs';
+import { combineLatest, map, Observable, shareReplay, take } from 'rxjs';
 import { isAmount } from 'src/type-guards';
+import { ActivePromptService } from '../state/active-prompt.service';
 import { StateService } from '../state/state.service';
 import { Prompt } from '../state/stateTypes';
 
@@ -19,7 +20,8 @@ export class PromptComponent implements OnInit {
 
   constructor(
     private activatedRoute:ActivatedRoute,
-    private state: StateService
+    private state: StateService,
+    private activePromptService: ActivePromptService
   ){}
   ngOnInit(): void {
     this.promptText$ = combineLatest([this.activatedRoute.paramMap,this.state.getQuestions()])
@@ -37,7 +39,13 @@ export class PromptComponent implements OnInit {
         }else{
           return {prompt:'',response:'',read:true};
         }
-      }));
+      }),shareReplay(1));
+
+      this.promptText$.pipe(take(1)).subscribe((prompt)=>{
+        if(prompt.prompt && prompt.response){
+          this.activePromptService.updatePrompt(prompt.prompt, prompt.response);
+        }
+      });
   }
 
 

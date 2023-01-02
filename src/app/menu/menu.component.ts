@@ -26,7 +26,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private state: StateService,
     private router: Router,
-    private route: ActivatedRoute){}
+    private route: ActivatedRoute
+    ){}
 
   ngOnInit(): void {
     this.menuItems$ = this.state.getQuestions().pipe(
