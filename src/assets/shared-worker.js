@@ -1,9 +1,17 @@
-onconnect = (e) => {
-  const port = e.ports[0];
+const browserInstances = [];
 
-  port.addEventListener('message', (e) => {
-    port.postMessage(e.data);
-  });
+onconnect = (connection) => {
+  const port = connection.ports[0];
+
+  browserInstances.push(port);
+
+  port.onmessage = function(event) {
+
+    // post message back out to your application
+    browserInstances.forEach(instance => {
+      instance.postMessage(event.data);
+    });
+  }
 
   port.start(); // Required when using addEventListener. Otherwise called implicitly by onmessage setter.
 }

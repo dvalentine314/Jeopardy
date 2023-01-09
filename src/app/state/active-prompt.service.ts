@@ -7,10 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ActivePromptService {
 
   readonly #sharedWorker: SharedWorker;
-  #activeMessage= new BehaviorSubject<{prompt: string, response: string}>({
-    prompt:'',
-    response:''
-  });
+  #activeMessage= new BehaviorSubject<{prompt: string, response: string}|null>(null);
   constructor() {
     this.#sharedWorker = new SharedWorker('assets/shared-worker.js');
     this.#sharedWorker.port.onmessage = (e) => {
@@ -20,5 +17,9 @@ export class ActivePromptService {
 
   updatePrompt(prompt: string, response: string){
     this.#sharedWorker.port.postMessage({prompt: prompt, response:response});
+  }
+
+  activeMessage(){
+    return this.#activeMessage.asObservable();
   }
 }
